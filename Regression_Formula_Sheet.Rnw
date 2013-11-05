@@ -75,38 +75,34 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-\begin{center}
-     \Large{\underline{Title}} \\
-\end{center}
+% \begin{center}
+%      \Large{\underline{Title}} \\
+% \end{center}
 
-\section{Formulas}
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-\subsection{xCode}
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
+%---------------------------------
+\section{Simple Model Estimation}
+%---------------------------------
 
-\section{Section 2}
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
+$$ \text{Sum of Squares: } Q = \sum{}_{i=1}^n(Y_1 - \beta{}_0 - \beta{}_1X_i)^2 $$
+$$ \text{Normal Equations: } b_1 = \frac{\sum{}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum{}(X_i - \bar{X})^2} $$
+$$ \text{Normal Equations: } b_0 = \frac{1}{n}(\sum{}Y_i - b_1\sum{}X_i) = \bar{Y} - b_1\bar{X} $$
+$$ \text{Residuals: } Y_i - \hat{Y}_i = \epsilon{}_i $$
+$$ SSE = \sum{}_{i=1}^n(Y_i - \hat{Y}_i)^2 = \sum{}_{i-1}^n\epsilon{}_i^2 $$
+$$ s^2 = MSE = \frac{SSE}{n-2} \text{ (2 dfs due to } \beta{}_0 \text{ and } \beta{}_1 ) $$
+
+%-------------------------------
+\section{Simple Model Inference:}
+%-------------------------------
+
+$$ E\{b_1\} = \beta{}_1 $$
+$$ \sigma{}^2\{b_1\} = \frac{\sigma{}^2}{\sum{}(X_i - \bar{X})^2} $$
+$$ s^2\{b_1\} = \frac{MSE}{\sum{}(X_i - \bar{X})^2} $$
+$$ \frac{b_1 - \beta{}_1}{s\{b_1\}} ~ t(n-2) $$
+$$ \text{CI for } \beta{}_1 \text{: } b_1 \pm t(1 - \frac{\alpha{}}{2};n - 2)s\{b_1\} $$
+$$ E\{b_0\} = \beta{}_0 $$
+$$ \sigma{}^2\{b_0\} = \sigma{}^2[\frac{1}{n} + \frac{\bar{x}^2}{\sum{}(X_i - \bar{X})^2}] $$
+$$ s^2\{b_0\} = MSE[\frac{1}{n} + \frac{\bar{x}^2}{\sum{}(X_i - \bar{X})^2}] $$
+$$ \text{CI for } \beta{}_0 \text{: } b_0 \pm t(1 - \frac{\alpha{}}{2};n - 2)s\{b_0\} $$
 $$ 1 + 1 = \beta \beta \beta $$
 $$ 1 + 1 = \beta \beta \beta $$
 $$ 1 + 1 = \beta \beta \beta $$
@@ -115,7 +111,106 @@ $$ 1 + 1 = \beta \beta \beta $$
 $$ 1 + 1 = \beta \beta \beta $$
 $$ 1 + 1 = \beta \beta \beta $$
 
+%------------------------------
 \section{Section 3}
+%------------------------------
+
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+
+%------------------------------
+\section{Section 4}
+%------------------------------
+
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+$$ 1 + 1 = \beta \beta \beta $$
+
+%------------------------------
+\section{Section 5}
+%------------------------------
+
 $$ 1 + 1 = \beta \beta \beta $$
 $$ 1 + 1 = \beta \beta \beta $$
 $$ 1 + 1 = \beta \beta \beta $$
