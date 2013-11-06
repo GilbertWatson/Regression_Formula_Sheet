@@ -94,166 +94,163 @@ $$ s^2 = MSE = \frac{SSE}{n-2} \text{ (2 dfs due to } \beta{}_0 \text{ and } \be
 \section{Simple Model Inference:}
 %-------------------------------
 
+\subsection{Confidence Intervals:}
+
 $$ E\{b_1\} = \beta{}_1 $$
 $$ \sigma{}^2\{b_1\} = \frac{\sigma{}^2}{\sum{}(X_i - \bar{X})^2} $$
 $$ s^2\{b_1\} = \frac{MSE}{\sum{}(X_i - \bar{X})^2} $$
-$$ \frac{b_1 - \beta{}_1}{s\{b_1\}} ~ t(n-2) $$
+$$ \frac{b_1 - \beta{}_1}{s\{b_1\}} \sim{} t(n-2) $$
 $$ \text{CI for } \beta{}_1 \text{: } b_1 \pm t(1 - \frac{\alpha{}}{2};n - 2)s\{b_1\} $$
 $$ E\{b_0\} = \beta{}_0 $$
 $$ \sigma{}^2\{b_0\} = \sigma{}^2[\frac{1}{n} + \frac{\bar{x}^2}{\sum{}(X_i - \bar{X})^2}] $$
 $$ s^2\{b_0\} = MSE[\frac{1}{n} + \frac{\bar{x}^2}{\sum{}(X_i - \bar{X})^2}] $$
 $$ \text{CI for } \beta{}_0 \text{: } b_0 \pm t(1 - \frac{\alpha{}}{2};n - 2)s\{b_0\} $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
+
+\subsection{Interval Estimation of $$E(\hat{Y}_h)$$}
+
+$$ E\{\hat{Y}_h\} = E\{Y_h\} = E\{b_0 + b_1X_h\} = \beta{}_0 + \beta{}_1X_h $$
+$$ \sigma{}^2\{\hat{Y}_h\} = \sigma{}^2[\frac{1}{2}+\frac{(X_h - \bar{X})^2}{\sum{}(X_i - \bar{X})^2}] $$
+$$ s^2\{\hat{Y}_h\} = MSE[\frac{1}{n}+\frac{(X_h - \bar{X})^2}{\sum{}(X_i - \bar{X})^2}] $$
+$$ \frac{\hat{Y}_h - E\{Y_h\}}{s\{\hat{Y}_h\}} \sim{} t(n - 2) $$
+$$ \text{CI for } E\{Y_h\} \text{: } \hat{Y}_h \pm t(1 - \frac{\alpha{}}{2};n - 2)s\{\hat{Y}_h\} $$
+
+\subsection{Prediction Intervals:}
+
+$$ \text{CI for } E\{Y_{h(new)}\} \text{: } \hat{Y}_h \pm t(1 - \frac{\alpha{}}{2};n - 2)s\{pred\} $$
+$$ s^2\{pred\} = MSE[1 + \frac{1}{n}+\frac{(X_h - \bar{X})^2}{\sum{}(X_i - \bar{X})^2}] $$
+
+\subsection{Prediction of Mean of m New Observations:}
+
+$$ \text{CI for m new Y observations: } \hat{Y}_h \pm t(1 - \frac{\alpha{}}{2};n - 2)s\{predmean\} $$
+$$ s^2\{predmean\} = MSE[\frac{1}{m} + \frac{1}{n}+\frac{(X_h - \bar{X})^2}{\sum{}(X_i - \bar{X})^2}] $$
+
+\subsection{Confidence Band for Regression Line:}
+
+$$ \text{Working-Hotelling CB: } \hat{Y}_h \pm Ws\{\hat{Y}_h\} $$
+$$ \text{where: } W^2 = 2F(1 - \alpha{};2;n - 2) $$
+$$ \text{Bonferroni Procedure: } \hat{Y}_h \pm Bs\{\hat{Y}_h\} $$
+$$ \text{where: } B = t(1 - \frac{\alpha}{2g};n - 2) $$ 
+$$ \text{Sheffe Prediction: } \hat{Y}_h \pm Ss\{pred\} $$
+$$ \text{where: } S^2 = gF(1 - \alpha;g;n - 2) $$
+$$ \text{Bonferroni Prediction: } \hat{Y}_h \pm Bs\{pred\} $$
+$$ \text{where: } B = t(1 - \frac{\alpha}{2g};n - 2) $$
+
+\subsection{ANOVA:}
+
+$$ SSTO = \sum{}(Y_i - \bar{Y})^2 = \sum{}Y_i^2 - n\bar{Y}^2 $$
+$$ SSE = \sum{}(Y_i - \hat{Y}_i)^2 $$
+$$ SSR = \sum{}(\hat{Y}_i - \bar{Y})^2 $$
+$$ SSTO = SSR + SSE $$
+$$ MSR = \frac{SSR}{1} = SSR $$
+$$ MSE = \frac{MSE}{n - 2} $$
+$$ SSTOU = \sum{}Y_i^2 $$
+
+\subsection{Tests:}
+
+$$ F^* = \frac{MSR}{MSE} $$
+$$ F^* \sim F(1 - \alpha,1,n - 2) $$
+
+\subsection{Coefficient of Determination:}
+
+$$ R^2 = \frac{SSR}{SSTO} = 1 - \frac{SSE}{SSTO} $$
+$$ r = \pm \sqrt{R^2} \text{ (coefficient of correlation)} $$
+
+%-------------------------------
+\section{Diagnostics:}
+%-------------------------------
+
+\subsection{Residuals:}
+
+$$ \bar{e} = \frac{\sum{}e_i}{n} = 0 $$
+$$ s^2 = \frac{\sum{}(e_i - \bar{e})^2}{n - 2} = \frac{\sum{}e_i^2}{n - 2} = \frac{SSE}{n - 2} = MSE $$
+$$ e_i* = \frac{e_i - \bar{e}}{\sqrt{MSE}} = \frac{e_i}{\sqrt{MSE}} \text{ (studentized residuals)}$$
+
+\subsection{Brown-Forsythe Test:}
+
+$$ n = n_1 + n_2 $$
+$$ d_{i1} = |e_{i1} - median(e_1)| $$
+$$ d_{i2} = |e_{i2} - median(e_2)| $$
+$$ t_{BF}^* = \frac{\bar{d}_1 - \bar{d}_2}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}} $$
+$$ s^2 = \frac{\sum{}(d_{i1} - \bar{d}_1)^2 + \sum{}(d_{i2} - \bar{d}_2)^2}{n - 2} $$
+
+\subsection{Breusch-Pagan Test:}
+
+Estimate the following model:
+$$ log_e\sigma{}_i^2 = \gamma{}_0 + \gamma{}_1X_i $$
+$$ X_{BP}^2 = \frac{\frac{SSR^*}{2}}{(\frac{SSE}{n})^2} $$
+Where $ SSR^* $ is from regressing $e^2$ on $X$ and SSE is from regressing $Y$ on $X$.
+$$ X_{BP}^* \sim \chi{}^2(1) $$
+
+\subsection{F Test for Lack of Fit:}
+
+For $j = 1 ... c$ levels and $i = 1 ... n_j$ replicates:
+$$ SSE(F) = \sum{j}\sum{i}(Y_{ij} - \bar{Y_j})^2 = SSPE $$
+$$ SSE(R) = \sum{}\sum{}(Y_{ij} - \hat{Y}_{ij})^2 = SSE $$
+$$ df_R = n - 2 \text{    } df_F = n - c $$
+$$ F^* = \frac{\frac{SSE(R) - SSE(F)}{df_R - df_F}}{\frac{SSE(F)}{df_F}} $$
+$$ SSLF = \sum{}\sum{}(\bar{Y}_j - \hat{Y}_{ij})^2 $$
+$$ SSE = SSPE + SSLF $$
+$$ MSLF = \frac{SSLF}{c - 2} $$
+$$ MSPE = \frac{SSPE}{n - c} $$
 
 %------------------------------
-\section{Section 3}
+\section{Simultaneous Inferences:}
 %------------------------------
 
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
+\subsection{Bonferroni CIs:}
+
+$$ B = t(1 - \frac{\alpha}{2g};n - g) $$
+$$ b_{ig} \pm Bs\{b_{ig}\} $$
 
 %------------------------------
-\section{Section 4}
+\section{Matrix Approach:}
 %------------------------------
 
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
+$$ \text{Model: } \mathbf{Y = X\boldsymbol\beta{} + \boldsymbol\epsilon} $$
+$$ \mathbf{b = (X'X)^{-1}X'Y} $$
+$$ \mathbf{\hat{Y} = X(X'X)^{-1}X'Y = HY} $$
+$$ \mathbf{e = Y - \hat{Y} = Y - Xb = (I - H)Y} $$
+$$ \mathbf{s^2\{e\} =}MSE\mathbf{(I - H)} $$
+$$ SSTO = \mathbf{Y'Y -}(\frac{1}{n})\mathbf{Y'JY = Y'[I -}(\frac{1}{n})\mathbf{J]Y} \text{ (J is sq. matrix of all 1's)} $$
+$$ SSE = \mathbf{e'e = (Y - Xb)'(Y - Xb) = Y'Y - b'X'Y = Y'(I - H)Y} $$
+$$ SSR = \mathbf{b'X'Y -}(\frac{1}{n})\mathbf{Y'JY = Y'[H -}(\frac{1}{n})\mathbf{J]Y} $$
+$$ \boldsymbol\sigma{}^2\{\mathbf{b}\} = \sigma{}^2\mathbf{(X'X)^{-1}} $$
+$$ \mathbf{s^2\{b\} = } MSE\mathbf{(X'X)^{-1}} $$
+$$ \text{Mean Response: } \hat{Y}_h = \mathbf{X_h'b} $$
+$$ s^2\{\hat{Y}_h\} = MSE\mathbf{(X_h'(X'X)^{-1}X_h) = X_h's^2\{b\}X_h}  $$
+$$ s^2\{pred\} = MSE\mathbf{(1 + X_h'(X'X)^{-1}X_h)} $$
+$$ s^2\{predmean\} = MSE(\frac{1}{m}\mathbf{+ X_h'(X'X)^{-1}X_h)} $$
 
 %------------------------------
-\section{Section 5}
+\section{Multiple Linear Regression:}
 %------------------------------
 
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
-$$ 1 + 1 = \beta \beta \beta $$
+Math is same as the matrix approach from above. A few more points:
+$$ MSR = \frac{SSR}{p - 1} \text{ (p is the \# of parameters)} $$
+$$ MSE = \frac{SSE}{n - p} $$
+$$ F^* = \frac{MSR}{MSE} $$
+$$ R^2 = \frac{SSR}{SSTO} = 1 - \frac{SSE}{SSTO} $$
+$$ R_a^2 = 1 - \frac{\frac{SSE}{n - p}}{\frac{SSTO}{n - 1}} = 1 - (\frac{n-1}{n-p})\frac{SSE}{SSTO} $$
+$$ R = \sqrt{R^2} $$
+$$ \frac{b_k - \beta{}_k}{s\{b_k\}} \sim t(n - p) $$
+ 
+\subsection{Joint Inferences:}
+
+$$ b_k \pm Bs\{b_k\} \text{ where } B = t(1 - \frac{\alpha}{2g};n - p) $$
+
+\subsection{Confidence Region:}
+
+$$ \hat{Y}_h \pm Ws\{\hat{Y}_h\} \text{ where } W^2 = pF(1 - \alpha;p;n-p) $$
+
+\subsection{Extra Sum of Squares:}
+
+$$ \text{Ex: } SSR(X_3|X_1,X_2) = SSE(X_1,X_2) - SSE(X_1,X_2,X_3) $$
+$$ F^* = \frac{\frac{SSE(R) - SSE(F)}{df_R - df_F}}{\frac{SSE(F)}{df_F}} $$
+$$ \text{Text Stat for }F^*\text{: } F^* \sim F(p - q,n - p) $$
+
+\subsection{Coefficients of Partial Determination:}
+
+$$ \text{Ex: } R_{Y1|23}^2 = \frac{SSR(X_1|X_2,X_3)}{SSE(X_2,X_3)} $$
 
 % You can even have references
 \rule{0.3\linewidth}{0.25pt}
